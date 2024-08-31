@@ -17,7 +17,11 @@ class Main {
                 // Chama a função
                 fibonacci(valor);
             } else if (op == 2) {
-                
+                // A entrada do valor é feita pelo usuário
+                System.out.print("Digite a String que deseja: ");
+                String str = in.next();
+                // Chama a função
+                inverter(str);
             } else {
                 System.out.println("Opção inválida.");
             }
@@ -31,7 +35,7 @@ class Main {
         System.out.println("Digite"
                 + "\n[0] Encerrar o programa"
                 + "\n[1] Fibonacci"
-                + "\n[2] ...");
+                + "\n[2] Inverter String");
     }
 
     public static void fibonacci(int valor) {
@@ -57,4 +61,14 @@ class Main {
         }
     }
 
+    public static void inverter(String str){
+        int aux = str.length()-1;
+        String resultado="";
+
+        for(int i = aux ; i >= 0 ; i--){
+            resultado = resultado + str.charAt(i);
+        }
+
+        System.out.println("\n"+resultado+"\n");
+    }
 }
