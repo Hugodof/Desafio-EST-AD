@@ -22,6 +22,15 @@ class Main {
                 String str = in.next();
                 // Chama a função
                 inverter(str);
+            } else if (op == 3) {
+                // Valores predefinidos no desafio
+                double sp = 67836.43;
+                double rj = 36678.66;
+                double mg = 29229.88;
+                double es = 27165.48;
+                double outros = 19849.53;
+                // Chama a função
+                distribuidora(sp, rj, mg, es, outros);
             } else {
                 System.out.println("Opção inválida.");
             }
@@ -34,8 +43,9 @@ class Main {
     public static void menu() {
         System.out.println("Digite"
                 + "\n[0] Encerrar o programa"
-                + "\n[1] Fibonacci"
-                + "\n[2] Inverter String");
+                + "\n[1] Fibonacci (Questão 2)"
+                + "\n[2] Inverter String (Questão 5)"
+                + "\n[3] Consultar distribuidora (Questão 4)");
     }
 
     public static void fibonacci(int valor) {
@@ -61,14 +71,31 @@ class Main {
         }
     }
 
-    public static void inverter(String str){
-        int aux = str.length()-1;
-        String resultado="";
+    public static void inverter(String str) {
+        int aux = str.length() - 1;
+        String resultado = "";
 
-        for(int i = aux ; i >= 0 ; i--){
+        for (int i = aux; i >= 0; i--) {
             resultado = resultado + str.charAt(i);
         }
 
-        System.out.println("\n"+resultado+"\n");
+        System.out.println("\n" + resultado + "\n");
     }
+
+    public static void distribuidora(double sp, double rj, double mg, double es, double outros) {
+        double total = sp + rj + mg + es + outros;
+
+        double resultadoSP = (sp / total) * 100;
+        double resultadoRJ = (rj / total) * 100;
+        double resultadoMG = (mg / total) * 100;
+        double resultadoES = (es / total) * 100;
+        double resultadoOutros = (outros / total) * 100;
+
+        System.out.println("\nSP teve um percentual de " + resultadoSP + "%");
+        System.out.println("RJ teve um percentual de " + resultadoRJ + "%");
+        System.out.println("MG teve um percentual de " + resultadoMG + "%");
+        System.out.println("ES teve um percentual de " + resultadoES + "%");
+        System.out.println("Outros tiveram um percentual de " + resultadoOutros + "%\n");
+    }
+
 }
